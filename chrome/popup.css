@@ -1,0 +1,52 @@
+body {
+  width: 250px;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+button {
+  padding: 8px 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  background: #333388;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3333cc;
+}
+
+.step {
+  display: none;
+}
+
+.opt {
+  display: none;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+ul li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+a {
+  color: #0053a3;
+  text-decoration: none;
+}
+a:hover {
+  color: #00a3b3;
+}
+
+.made-by {
+  display: block;
+  margin-top: 16px;
+}
