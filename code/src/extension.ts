@@ -78,7 +78,7 @@ function getWebviewContent({ quackImage, script, style }) {
               </li>
             </ul>
 
-            <sub>no ducks were hurt in the making of this software</sub>
+            <sub>no ducks were harmed in the making of this software</sub>
           </div>
           <div>
               <img src="vscode-resource://${quackImage}" width="200" />

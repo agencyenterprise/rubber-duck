@@ -2,7 +2,7 @@
   "name": "ask-a-question-rubber-duck",
   "displayName": "Ask a question Rubber Duck",
   "description": "Rubber ducking is a powerful method for solving even the most complex problems",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "brunolm",
   "repository": {
     "type": "git",
@@ -28,16 +28,20 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
+    "compile": "tsc -p ./ && npm run copy-assets",
+    "copy-assets": "copyfiles -u 1 src/images/**/* src/quack.* out/",
+    "deploy": "npx vsce publish",
     "watch": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.21",
-    "tslint": "^5.8.0",
+    "@types/mocha": "^2.2.42",
     "@types/node": "^8.10.25",
-    "@types/mocha": "^2.2.42"
+    "copyfiles": "^2.1.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1",
+    "vsce": "^1.52.0",
+    "vscode": "^1.1.21"
   }
 }
