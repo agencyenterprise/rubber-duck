@@ -4,6 +4,10 @@
   "description": "Rubber ducking is a powerful method for solving even the most complex problems",
   "version": "0.0.1",
   "publisher": "brunolm",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:agencyenterprise/rubber-duck.git"
+  },
   "engines": {
     "vscode": "^1.28.0"
   },
