@@ -1,6 +1,7 @@
 'use strict'
 
 import * as vscode from 'vscode'
+import * as fs from 'fs'
 import * as path from 'path'
 
 export function activate(context: vscode.ExtensionContext) {
@@ -9,13 +10,18 @@ export function activate(context: vscode.ExtensionContext) {
       enableScripts: true,
     })
 
-    const onDiskQuackImage = vscode.Uri.file(path.join(context.extensionPath, 'src', 'images', 'quack.png'))
+    const srcFolder = path.join(context.extensionPath, 'src')
+    const outFolder = path.join(context.extensionPath, 'out')
+
+    const destinationFolder = fs.existsSync(srcFolder) ? srcFolder : outFolder
+
+    const onDiskQuackImage = vscode.Uri.file(path.join(destinationFolder, 'images', 'quack.png'))
     const quackImage = onDiskQuackImage.with({ scheme: 'vscode-resource' }).path
 
-    const onDiskScript = vscode.Uri.file(path.join(context.extensionPath, 'src', 'quack.js'))
+    const onDiskScript = vscode.Uri.file(path.join(destinationFolder, 'quack.js'))
     const script = onDiskScript.with({ scheme: 'vscode-resource' }).path
 
-    const onDiskStyle = vscode.Uri.file(path.join(context.extensionPath, 'src', 'quack.css'))
+    const onDiskStyle = vscode.Uri.file(path.join(destinationFolder, 'quack.css'))
     const style = onDiskStyle.with({ scheme: 'vscode-resource' }).path
 
     panel.webview.html = getWebviewContent({ quackImage, script, style })

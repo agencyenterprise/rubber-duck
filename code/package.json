@@ -2,11 +2,11 @@
   "name": "ask-a-question-rubber-duck",
   "displayName": "Ask a question Rubber Duck",
   "description": "Rubber ducking is a powerful method for solving even the most complex problems",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "publisher": "brunolm",
   "repository": {
     "type": "git",
-    "url": "git@github.com:agencyenterprise/rubber-duck.git"
+    "url": "https://github.com/agencyenterprise/rubber-duck.git"
   },
   "engines": {
     "vscode": "^1.28.0"
@@ -17,6 +17,7 @@
   "activationEvents": [
     "onCommand:extension.rubberDuck"
   ],
+  "icon": "out/images/quack.png",
   "main": "./out/extension",
   "contributes": {
     "commands": [
@@ -28,7 +29,7 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./ && npm run copy-assets",
+    "compile": "rimraf out && tsc -p ./ && npm run copy-assets",
     "copy-assets": "copyfiles -u 1 src/images/**/* src/quack.* out/",
     "deploy": "npx vsce publish",
     "watch": "tsc -watch -p ./",
@@ -39,6 +40,7 @@
     "@types/mocha": "^2.2.42",
     "@types/node": "^8.10.25",
     "copyfiles": "^2.1.0",
+    "rimraf": "^2.6.2",
     "tslint": "^5.8.0",
     "typescript": "^2.6.1",
     "vsce": "^1.52.0",
