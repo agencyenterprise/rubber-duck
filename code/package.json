@@ -2,7 +2,7 @@
   "name": "ask-a-question-rubber-duck",
   "displayName": "Ask a question Rubber Duck",
   "description": "Rubber ducking is a powerful method for solving even the most complex problems",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "AEStudio",
   "repository": {
     "type": "git",
